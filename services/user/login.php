@@ -14,6 +14,10 @@ $userPass = md5(sha1(md5($userPass)));
 
 
 $check = $db->checkUser($userEmail, $userPass);
+if (empty($check)){
+    header('location: ../../index.php');
+}
+
 if ($check[0]['type'] == 'user'){
     $_SESSION['user'] = array($check[0]['id'], $check[0]['first'], $check[0]['last']);
     header('location: ../../employee/home.php'); 

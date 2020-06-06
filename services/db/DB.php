@@ -8,8 +8,7 @@ class DB {
     }
 
     public function checkUser($uemail, $upassword){
-        $query = "SELECT * FROM `users` WHERE 
-            `password` = '" . $upassword . "' AND `email` = '" . $uemail . "'";
+        $query = "SELECT * FROM `users` WHERE `password` = '" . $upassword . "' AND `email` = '" . $uemail . "'";
         $res = mysqli_query($this->link, $query);
         if ($res){
             while($row = mysqli_fetch_array($res)){
