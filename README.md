@@ -21,7 +21,7 @@ since we only have two active tables within our DB, `users` and `requests`.
 Created a `user_id` column to the `requests` table to match each `id` from `users` {`1-N` (1 user has N requests)}.
 I have bypassed the need for an `admin` since the only difference between an `plain` and an `admin` user is their `dashboards` and their `type` column.
 
-## Seeds and Usaged
+## Seeds and Usage
 You can use the following credentials to log in:
 - Type `user/employee` - Email: `karlzafiris@gmail.com`, Password: `admin`
 - Type `user/admin` - Email: `gwills@gmail.com`, Password: `admin`
