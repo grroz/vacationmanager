@@ -101,6 +101,7 @@
 
                     <div id="users" class="tab-pane fade">
                         <h3>All Users</h3>
+                        <p>(You record has been reducted)</p>
                             <?php $users = $db->getAllUsers(); ?>
                             <?php if (!empty($users)){ ?>
                                 <table class="table table-bordered">
@@ -112,16 +113,28 @@
                                         <th>Action</th>
                                     </tr>
                                     <?php foreach($users as $user){ ?>
+                                            <?php if ($user['uid'] != $id){ ?>
                                             <tr>
                                                 <form action="../services/user/update.php" method="get">
                                                     <input type="hidden" value="<?= $user['uid'] ?>" name="uid">
                                                     <td><input type="text" value="<?= $user['firstname'] ?>" class="form-control" name="first" style="border:none;"></td>
                                                     <td><input type="text" value="<?= $user['lastname'] ?>" class="form-control" name="last" style="border:none;"></td>
                                                     <td><input type="email" value="<?= $user['email'] ?>" class="form-control" name="uemail" style="border:none;"></td>
-                                                    <td><input type="text" value="<?= $user['type'] ?>" class="form-control" name="utype" style="border:none;"></td>
+                                                    <td>
+                                                        <select name="utype" class="form-control">
+                                                            <?php if ($user['type'] == 'user'){ ?>
+                                                                <option value="user">Employee</option>
+                                                                <option value="admin">Admin</option>
+                                                            <?php } else { ?>
+                                                                <option value="admin">Admin</option>
+                                                                <option value="user">Employee</option>
+                                                            <?php } ?>
+                                                        </select>
+                                                    </td>
                                                     <td><input type="submit" name="update" value="Update" class="btn btn-warning"></td>
                                                 </form>
-                                            </tr>                             
+                                            </tr>   
+                                            <?php } ?>                          
                                     <?php } ?>
                                     </table>
                                 <?php } else { ?>
