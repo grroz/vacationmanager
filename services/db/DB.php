@@ -97,6 +97,7 @@ class DB {
                     'days_requested' => $days,
                     'status' => $row['req_status'],
                     'employee' => $user['firstname'] . ' ' . $user['lastname'],
+                    'emp_mail' => $user['email'],
                     'emp_id' => $user['id']
                 );
             }

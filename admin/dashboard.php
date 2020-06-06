@@ -86,8 +86,8 @@
                                         Status: <b><?= $req['status'] ?></b><br>
                                         <?php if ($req['status'] == 'pending'){ ?>
                                             <div class="btn-group">
-                                                <a class="btn btn-success" href="../services/user/action.php?action=1&rid=<?= $req['rid']?>&uid=<?= $req['emp_id'] ?>">Approve</a> 
-                                                <a class="btn btn-danger" href="../services/user/action.php?action=0&rid=<?= $req['rid']?>&uid=<?= $req['emp_id'] ?>">Reject</a>
+                                                <a class="btn btn-success" href="../services/user/action.php?action=1&rid=<?= $req['rid']?>&uid=<?= $req['emp_id'] ?>&m=<?= $req['emp_mail'] ?>&sub=<?= $req['date_submitted']?>">Approve</a> 
+                                                <a class="btn btn-danger" href="../services/user/action.php?action=0&rid=<?= $req['rid']?>&uid=<?= $req['emp_id'] ?>&m=<?= $req['emp_mail'] ?>&sub<?= $req['date_submitted']?>">Reject</a>
                                             </div>
                                         <?php } ?>
                                        
