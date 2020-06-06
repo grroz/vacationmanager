@@ -1,5 +1,5 @@
 # Vacation Corporate Manager 
-![alt text](https://github.com/grroz/vacationmanager/blob/master/assets/vac.png)
+![alt text]("https://i.ibb.co/r5NzKjb/vac.png)
 
 Based on a fictional concept, employees can log in and request vacation days.
 A supervisor/administrator will log in as well and approve or reject requests sent by each user.
